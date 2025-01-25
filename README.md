@@ -1,2 +1,4 @@
-# zend1-test
-Basic CRUD Zend 1
+zend-v112-crud
+==================
+
+Zend Framework 1.12 CRUD Project
