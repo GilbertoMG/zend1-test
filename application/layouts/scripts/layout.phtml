@@ -1,7 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
+        <?php echo $this->headTitle('Teste 000'); ?>        
+        <?php echo $this->headMeta(); ?>        
+        <?php echo $this->headLink(); ?>        
+        <?php echo $this->headScript(); ?>        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">        
@@ -9,20 +13,40 @@
         <meta name="author" content="">
 
         <title>Zend Project</title>
-
+<!-- Bootstrap 5 core CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
          
     </head>
 
     <body>
+<div class="container">
+    <div class="row">
+                <div class="col-12">
+                <?php echo $this->render("header.phtml"); ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                <?php echo $this->layout()->content; ?> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                <?php echo $this->render("footer.phtml"); ?>
+                </div>
+            </div>
+</div>
+        
 
-        <?php echo $this->render("header.phtml"); ?>
-        <div class="jumbotron"><?php echo $this->layout()->content; ?> </div>
-        <?php echo  $this->baseUrl() ;?>
+        
     </div> <!-- /container -->
-    <?php echo $this->render("footer.phtml"); ?>
+    
 
 
-
+<!-- Bootstrap 5 core JS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--Jquery JS CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
