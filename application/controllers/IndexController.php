@@ -26,7 +26,28 @@ class IndexController extends Zend_Controller_Action
         //          'label' => 'Buscar'
         //      ));
 
-         $this->view->form = $indexForm;
+        $dbTable = new Application_Model_DBTable_Index();
+        //var_dump($dbTable->info());
+        // Retorna as colunas -- $dbTable->info(Zend_Db_Table_Abstract::COLS)
+        
+        //var_dump($dbTable->info(Zend_Db_Table_Abstract::COLS));
+        // Retorna os nomes das colunas -- $dbTable->info(Zend_Db_Table_Abstract::COLS)
+        
+        //Results
+        $tableName = $dbTable->info(Zend_Db_Table_Abstract::NAME);
+        $results = $dbTable->fetchAll(array(
+            'role = ?' => 1,
+        ))->toArray();
+        
+        //DEBUG
+        foreach ($results as $key => $value) {
+            echo $key . ' - ' . $value['username'] . ' - ' . $value['role'] . '<br />';
+        }
+ 
+$this->view->results = $results;
+     //   var_dump($this->view->results);
+        $this->view->form = $indexForm;
+        $this->view->tableName = $tableName;
 
         $this->view->teste = " teste da view";
     }
