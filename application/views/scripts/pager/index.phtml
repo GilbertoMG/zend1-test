@@ -1,0 +1,11 @@
+<!-- Exibe os itens da página atual -->
+<?php foreach ($this->paginator as $item) : ?>
+    <a href="<?php echo $this->url(array('page' => $item)); ?>"><?php echo $item; ?></a><br>
+<?php endforeach; ?>
+
+<!-- Exibe os controles de paginação -->
+<?php echo $this->paginationControl(
+    $this->paginator,
+    'Sliding', // Tipo de paginação (Sliding, Elastic, etc.)
+    'partials/pagination.phtml' // Partial para renderizar os controles
+); ?>
