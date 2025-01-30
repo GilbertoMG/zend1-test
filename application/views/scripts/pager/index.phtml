@@ -1,6 +1,6 @@
 <!-- Exibe os itens da página atual -->
 <?php foreach ($this->paginator as $item) : ?>
-    <a href="<?php echo $this->url(array('page' => $item)); ?>"><?php echo $item; ?></a><br>
+    O número é <?php echo $item; ?><hr>
 <?php endforeach; ?>
 
 <!-- Exibe os controles de paginação -->
