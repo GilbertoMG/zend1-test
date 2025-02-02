@@ -1,0 +1,35 @@
+<?php /* @var $this Zend_View */ ?>
+
+<a href="<?= $this->baseUrl('customer/customer/create'); ?>">create customer</a>
+<table class="table table-sm table-border">
+    <caption>Customers list</caption>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>email</th>
+            <th>age</th>
+            <th>active</th>
+            <th>info</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->entries as $entry): /* @var $entry Customer_Model_Customer */ ?>
+            <tr>
+                <td><?php echo $this->escape($entry->getId()); ?></td>
+                <td><?php echo $this->escape($entry->getFirstName()); ?></td>
+                <td><?php echo $this->escape($entry->getLastName()); ?></td>
+                <td><?php echo $this->escape($entry->getEmail()); ?></td>
+                <td><?php echo $this->escape($entry->getAge()); ?></td>
+                <td><?php echo $this->escape($entry->getActive()); ?></td>
+                <td><a href="<?= $this->baseUrl('customer/customer/view'); ?>/id/<?php echo $this->escape($entry->getId()); ?>">info</a></td>
+                <td><a href="<?= $this->baseUrl('customer/customer/edit'); ?>/id/<?php echo $this->escape($entry->getId()); ?>">edit</a></td>
+                <td><a href="<?= $this->baseUrl('customer/customer/delete'); ?>/id/<?php echo $this->escape($entry->getId()); ?>">delete</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<a href="<?= $this->baseUrl('customer/customer/create'); ?>">create customer</a>

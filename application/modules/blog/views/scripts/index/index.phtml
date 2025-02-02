@@ -7,6 +7,18 @@ Zend view script
         <hr>
         
     </div>
-
+<div class="col-12">
+    <?php foreach ($this->posts as $post) { ?>
+        <!-- Alternative card -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><?= $post->id; ?> <?= $post->title; ?> <?= $post->user_id; ?></h5>
+                <p class="card-text"><?= $post->content; ?></p>
+                <a href="<?= $this->baseUrl('/blog/index/edit?id=' . $post->id); ?>">edit</a>
+                <a href="<?= $this->baseUrl('/blog/index/delete?id=' . $post->id); ?>">delete</a>
+            </div>
+        </div>
+    <?php } ?>
+</div>
 </div>
 

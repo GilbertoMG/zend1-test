@@ -1,5 +1,5 @@
 <?php
-class blog_Form_Blog extends Zend_Form {
+class Blog_Form_Blog extends Zend_Form {
 
     public function init()
     {

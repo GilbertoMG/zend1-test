@@ -1,0 +1,33 @@
+<?php /* @var $this Zend_View */ ?>
+<?php /* @var $entry Application_Model_Customer */ $entry = $this->entry; ?>
+
+<a href="/customer/list">back to list</a>
+<table cellpadding="2" cellspacing="0" border="1">
+    <caption>Customer info</caption>
+
+    <tr>
+        <th>id</th>
+        <td><?php echo $this->escape($entry->getId()); ?></td>
+    </tr>
+    <tr>
+        <th>first name</th>
+        <td><?php echo $this->escape($entry->getFirstName()); ?></td>
+    </tr>
+    <tr>
+        <th>last name</th>
+        <td><?php echo $this->escape($entry->getLastName()); ?></td>
+    </tr>
+    <tr>
+        <th>email</th>
+        <td><?php echo $this->escape($entry->getEmail()); ?></td>
+    </tr>
+    <tr>
+        <th>age</th>
+        <td><?php echo $this->escape($entry->getAge()); ?></td>
+    </tr>
+    <tr>
+        <th>active</th>
+        <td><?php echo $this->escape($entry->getActive()); ?></td>
+    </tr>
+</table>
+<a href="/customer/list">back to list</a>

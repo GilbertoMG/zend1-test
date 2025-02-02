@@ -1,0 +1,11 @@
+# Bloqueia o acesso a todos os arquivos no diretório atual
+<FilesMatch ".*">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Permite o acesso apenas a arquivos específicos (opcional)
+# <FilesMatch "^(index\.php|robots\.txt|favicon\.ico)$">
+#     Order allow,deny
+#     Allow from all
+# </FilesMatch>

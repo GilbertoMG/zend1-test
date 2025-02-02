@@ -1,0 +1,40 @@
+<?php /* @var $this Zend_View */ ?>
+<table class="table table-sm table-border">
+    <caption>Customers list</caption>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>email</th>
+            <th>age</th>
+            <th>active</th>
+            <th>info</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+foreach ($this->paginator as $entry) :?>
+<tr>
+    <td><?php echo $entry->id; ?></td>
+    <td><?php echo $entry->first_name; ?></td>
+    <td><?php echo $entry->last_name; ?></td>
+    <td><?php echo $entry->email; ?></td>
+    <td><?php echo $entry->age; ?></td>
+    <td><?php echo $entry->active; ?></td>
+    <td><a href="<?= $this->baseUrl('customer/customer/view'); ?>/id/<?php echo $entry->id; ?>">info</a></td>
+    <td><a href="<?= $this->baseUrl('customer/customer/edit'); ?>/id/<?php echo $entry->id; ?>">edit</a></td>
+    <td><a href="<?= $this->baseUrl('customer/customer/delete'); ?>/id/<?php echo $entry->id; ?>">delete</a></td>
+</tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+
+<!-- Exibe os controles de paginação -->
+<?php echo $this->paginationControl(
+    $this->paginator,
+    'Sliding', // Tipo de paginação (Sliding, Elastic, etc.)
+    'partials/pagination.phtml' // Partial para renderizar os controles
+); ?>

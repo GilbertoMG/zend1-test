@@ -1,20 +1,29 @@
 <?php
-class Blog_Model_Blog
+class Blog_Model_Blog extends Application_Model_Base
 {
-    protected $_table = 'blog';
- 
-    public function info()
+    public function init()
     {
-        return 'Blog Index Controller info';
+        $this->_name = 'blog';
+        $this->_primary = 'id';
+        parent::init();
     }
-
+ 
     public function findAll()
     {
-        return $this->table()->fetchAll();
+        return $this->fetchAll();
+    }
+    
+    // update
+    public function update($id, $data)
+    {
+        return $this->update($data, array('id = ?' => $id));
+    }
+   
+    // delete
+    public function delete($id)
+    {
+        return $this->delete(array('id = ?' => $id));
     }
 
-    protected function table()
-    {
-        return new Zend_Db_Table($this->_table);
-    }
+    
 }
